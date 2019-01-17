@@ -3,9 +3,9 @@ const mongoose = require('mongoose');
 const keys = require('./config/keys');
 
 const app = express();
-const port = process.env.port || 3003;
-const dbusername = process.env.mongodbusername || keys.mongo.username;
-const dbpassword = process.env.mongodbpassword || keys.mongo.password;
+const port = process.env.PORT || 3003;
+const dbusername = process.env.MONGODB_USERNAME || keys.mongo.username;
+const dbpassword = process.env.MONGODB_PASSWORD || keys.mongo.password;
 
 // Load Logo model
 const Logo = require('./models/Logo');
