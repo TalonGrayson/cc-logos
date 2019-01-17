@@ -12,6 +12,10 @@ const Logo = require('./models/Logo');
 
 mongoose.connect(`mongodb://${dbusername}:${dbpassword}@ds159634.mlab.com:59634/cc-logos`, { useNewUrlParser: true });
 
+app.get('/', (req, res) => {
+    res.redirect('/logos/creativecombine')
+})
+
 app.get('/logos', (req, res) => {
     Logo.find()
     .sort({ date: -1 })
@@ -29,7 +33,7 @@ app.get('/logos/:streamer', (req, res) => {
             res.status(404).json(errors);
         }
 
-        res.redirect(logo.image_url);
+        res.send(logo.image_url);
         })
         .catch(err => res.status(404).json(err));
 });
