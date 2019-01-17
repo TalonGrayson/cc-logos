@@ -8,10 +8,13 @@
     "start": "node index.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "TalonGrayson",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.16.4",
     "mongoose": "^5.4.4"
+  },
+  "engines": {
+    "node": "11.6.x"
   }
 }
