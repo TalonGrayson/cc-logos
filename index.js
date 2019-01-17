@@ -4,8 +4,8 @@ const keys = require('./config/keys');
 
 const app = express();
 const port = process.env.PORT || 3003;
-const dbusername = process.env.MONGODB_USERNAME || keys.mongo.username;
-const dbpassword = process.env.MONGODB_PASSWORD || keys.mongo.password;
+const dbusername =  keys.mongo.username;
+const dbpassword =  keys.mongo.password;
 
 // Load Logo model
 const Logo = require('./models/Logo');
