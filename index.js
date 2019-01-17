@@ -4,11 +4,13 @@ const keys = require('./config/keys');
 
 const app = express();
 const port = process.env.port || 3003;
+const dbusername = process.env.mongodbusername || keys.mongo.username;
+const dbpassword = process.env.mongodbpassword || keys.mongo.password;
 
 // Load Logo model
 const Logo = require('./models/Logo');
 
-mongoose.connect(`mongodb://${keys.mongo.username}:${keys.mongo.password}@ds159634.mlab.com:59634/cc-logos`, { useNewUrlParser: true });
+mongoose.connect(`mongodb://${dbusername}:${dbpassword}@ds159634.mlab.com:59634/cc-logos`, { useNewUrlParser: true });
 
 app.get('/logos', (req, res) => {
     Logo.find()
